@@ -1,0 +1,178 @@
+.navbar {
+    align-items: center;
+    padding: 0 2vw;
+
+    .navbar-menu {
+        align-items: center;
+
+        .navbar-end {
+            align-items: center;
+        }
+    }
+}
+
+.titles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .title {
+        font-size: 2em;
+    }
+
+    @media screen and (max-width:768px) {
+        .title {
+            margin-bottom: 10px;
+        }
+
+        .desc {
+            font-size: 14px;
+        }
+
+        .long {
+            display: none;
+        }
+
+        margin: 20px 0 10px 0;
+    }
+
+    width: 92vw;
+    overflow-x: hidden;
+    padding-bottom: 20px;
+
+}
+
+.home-menus {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 10px 0;
+    border-top: 1px solid #EDEDED;
+    border-bottom: 1px solid #EDEDED;
+
+    .menu-item {
+        color: #000;
+        font-size: 18px;
+    }
+}
+
+.logo {
+    margin-left: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    color: #000;
+
+    // margin-top: 20px;
+    @media screen and (max-width:768px) {
+        font-size: 18px;
+    }
+}
+
+.main-content {
+    width: 100vw;
+    overflow-x: visible;
+    padding: 0 4vw;
+    margin: 0;
+
+    .column {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+.columns {
+    margin: 0;
+}
+
+
+.index-container {
+    width: 100%;
+    padding: 0 10vw;
+    margin-bottom: 100px;
+
+    .contnt-block {
+        margin-bottom: 20px;
+    }
+}
+
+.footer-container {
+    background-color: #1D2830;
+    padding: 20px 4vw;
+    width: 100%;
+
+
+    .content {
+        // height: 100px;
+        width: 100%;
+        height: max-content;
+        display: flex;
+        // margin-bottom: 80px;
+        padding: 40px 0;
+        color: #fff;
+
+        border-bottom: 1px solid #c9c9c9;
+
+        .title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50%;
+            font-family: Alibaba PuHuiTi 2.0;
+            font-size: 30px;
+            font-weight: 500;
+            line-height: 63.18px;
+            letter-spacing: 0.02em;
+            color: #fff;
+        }
+
+        .footer-links {
+            width: 50%;
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+
+            li {
+                width: 50%;
+                margin-bottom: 10px;
+
+                a {
+                    color: #fff;
+
+                }
+
+                cursor: pointer;
+            }
+
+            @media screen and (max-width:768px) {
+                // flex-direction: column;\
+                // flex-wrap: wrap;
+                // gap: 30px;
+                flex-wrap: nowrap;
+                flex-direction: column;
+
+                li {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .footer-notice {
+        .is-size-6 {
+            color: #dad8d8;
+        }
+    }
+
+}
+
+.section-line {
+    margin: 40px 0 40px 1em !important;
+    border-bottom: 1px solid  #00000050;
+    width: 100%;
+}

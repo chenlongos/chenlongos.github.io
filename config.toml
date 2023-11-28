@@ -1,0 +1,53 @@
+# The URL the site will be built for
+base_url = "https://dongjianhao123.github.io/ChenlongOS/"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+title = "ChenlongOS"
+description = ""
+
+minify_html = false
+
+[extra]
+githubUrl = "https://github.com/DongJianHao123/ChenlongOS"
+navbar = [
+  # { name = "主页", url = "/#" },
+  # { name = "rCore", url = "/#" },
+  # { name = "下载", url = "/#" },
+  # { name = "Arce OS", url = "https://arceos.cn" },
+  # { name = "日志", url = "/#" },
+  # { name = "文档", url = "/#" },
+  { name = "view on github", url = "https://github.com/DongJianHao123/ChenlongOS" },
+]
+
+menus = [
+  { label = "设计目标", path = '#nav1' },
+  { label = "现有功能", path = '#nav2' },
+  { label = "整体架构", path = '#nav3' },
+  { label = "组件设计", path = '#nav4' },
+  { label = "代码统计", path = '#nav5' },
+  { label = "功能演示", path = '#nav6' },
+  { label = "最新进展", path = '#nav7' },
+]
+
+external = [
+  { name = "Rust Language Website", url = "https://rust-lang.org" },
+  { name = "Official Rust Book", url = "https://doc.rust-lang.org/book/" },
+]
+
+footers = [
+  { label = "组织主页", path = 'https://github.com/chenlongos' },
+  { label = "树莓派技术文档", path = 'https://chenlongos.com/raspi4-with-arceos-doc/' },
+  { label = "项目仓库", path = 'https://github.com/chenlongos/arceos' },
+  { label = "X86技术文档", path = 'https://chenlongos.com/x86-with-arceos-doc/' },
+  { label = "问答论坛", path = 'https://qa.arceos.cn/' },
+  { label = "联系我们", path = 'mailto:hello@arceos.cn' },
+]
