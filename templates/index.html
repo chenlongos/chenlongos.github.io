@@ -5,8 +5,7 @@
 {% block content %}
     <div class="titles">
     <h1 class="title">{{ section.title }}</h1>
-    <p class="desc">{{section.extra.desc[0]}}</p>
-    <p class="desc long">{{section.extra.desc[1]}}</p>
+    <p class="desc">{{section.extra.desc}}</p>
     <!-- <ul class="home-menus">
         {% for menu in config.extra.menus %}
         <a class="menu-item " href="{{ menu.path | replace(from='$BASE_URL', to=config.base_url) }}">
