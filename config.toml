@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://dongjianhao123.github.io/ChenlongOS/"
+base_url = "https://chenlongos.com/"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -17,7 +17,7 @@ description = ""
 minify_html = false
 
 [extra]
-githubUrl = "https://github.com/DongJianHao123/ChenlongOS"
+githubUrl = "https://github.com/chenlongos/chenlongos.github.io/"
 navbar = [
   # { name = "主页", url = "/#" },
   # { name = "rCore", url = "/#" },
@@ -25,7 +25,7 @@ navbar = [
   # { name = "Arce OS", url = "https://arceos.cn" },
   # { name = "日志", url = "/#" },
   # { name = "文档", url = "/#" },
-  { name = "view on github", url = "https://github.com/DongJianHao123/ChenlongOS" },
+  { name = "view on github", url = "https://github.com/chenlongos/chenlongos.github.io/" },
 ]
 
 menus = [
