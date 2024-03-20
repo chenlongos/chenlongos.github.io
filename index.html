@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://chenlongos.com/style.css" rel="stylesheet" />
+    <link href="https://chenlongos.com/home.css" rel="stylesheet" />
+
+    
+
+    <title>Home - ChenlongOS</title>
+</head>
+
+<body>
+    <nav class="navbar " role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="logo" href="https:&#x2F;&#x2F;chenlongos.com&#x2F;">
+                <!-- <img class="navbar-logo" src="https://ssl.cdn.maodouketang.com/Fpkgonzaw5GTUFa0Bfvd_ZlO5yq1"
+                    alt="ArceOS" /> -->
+                    ChenLong OS
+                <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu">
+            <div class="navbar-end">
+                
+                <a class="navbar-item has-text-weight-semibold"
+                    href="https:&#x2F;&#x2F;github.com&#x2F;chenlongos&#x2F;chenlongos.github.io&#x2F;">
+                    view on github
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content ">
+        <div class="column">
+            <section class="section">
+                <div class="container">
+                    
+    <div class="titles">
+    <h1 class="title">辰龙操作系统</h1>
+    <p class="desc">基于清华大学 ArceOS 操作系统的发行版</p>
+    <!-- <ul class="home-menus">
+        
+        <a class="menu-item " href="#nav1">
+            设计目标
+        </a>
+        
+        <a class="menu-item " href="#nav2">
+            现有功能
+        </a>
+        
+        <a class="menu-item " href="#nav3">
+            整体架构
+        </a>
+        
+        <a class="menu-item " href="#nav4">
+            组件设计
+        </a>
+        
+        <a class="menu-item " href="#nav5">
+            代码统计
+        </a>
+        
+        <a class="menu-item " href="#nav6">
+            功能演示
+        </a>
+        
+        <a class="menu-item " href="#nav7">
+            最新进展
+        </a>
+        
+    </ul> -->
+</div>
+<div id="main-content" class="content">
+    <div class='index-container'>
+<h2 id="jian-jie">简介</h2>
+<p>旨在为智能汽车、机器人、物联网等领域的复杂系统提供高安全、高性能和自主可控的国产操作系统解决方案。</p>
+<div class="section-line"></div>
+<h2 id="gong-neng-he-te-dian">功能和特点</h2>
+<h3 id="1-ti-gong-bian-yuan-ji-suan-neng-li">1. 提供边缘计算能力：</h3>
+<p>辰龙操作系统将越来越注重在设备本地实现边缘计算能力。通过在设备上运行具有智能决策能力的算法和模型，可以避免将所有数据传输到云端进行处理，从而减少延迟并提高效率。边缘计算还可以提供更好的隐私保护，因为敏感数据可以在本地进行处理而无需离开设备。</p>
+<h3 id="2-zhi-chi-duo-chong-lian-jie-xie-yi-he-biao-zhun">2. 支持多种连接协议和标准：</h3>
+<p>辰龙操作系统将支持多种连接协议和标准，以适应不同类型的物联网设备和应用场景。这包括但不限于Wi-Fi、蓝牙、Zigbee、LoRa等无线协议和MQTT、CoAP等通信协议。同时，辰龙操作系统也将积极参与和支持行业标准的制定和发展，以促进设备之间的互操作性。</p>
+<h3 id="3-qiang-hua-an-quan-xing">3. 强化安全性：</h3>
+<p>随着物联网设备的普及，安全威胁也不断增加。未来，面向安全的辰龙操作系统将继续加强安全性，提供更强大的安全防护机制。这可能包括对设备进行身份验证、数据加密和安全通信等功能，以保护用户的隐私和数据安全。</p>
+<h3 id="4-ti-gong-jiao-ben-yu-yan-zhi-chi">4. 提供脚本语言支持</h3>
+<p>辰龙操作系统提供对Bash和Python3等脚本语言的支持，方便开发人员进行自定义的脚本编写和执行。</p>
+<h3 id="5-duo-chong-zhong-jian-jian-zhi-chi">5. 多种中间件支持</h3>
+<ul>
+<li><strong>DDS</strong>：DDS是一种用于实时数据传输和通信的标准，被广泛应用于物联网、机器人、工业自动化等领域。辰龙操作系统集成了DDS协议栈，使得设备可以使用DDS进行高效、可靠的数据交换和通信，为物联网、机器人和工业自动化等应用场景提供了可靠的数据交换解决方案。</li>
+<li><strong>ROS/ROS2</strong>：作为机器人操作系统（Robot Operating System）的支持平台，辰龙操作系统可以与ROS框架无缝集成，在机器人开发和控制方面提供强大的工具和功能。使用ROS，开发人员可以实现传感器数据的获取、导航和路径规划、机器人控制等任务。</li>
+<li><strong>OpenCV</strong>：作为计算机视觉库的集成，辰龙操作系统可以利用OpenCV来处理图像和视频数据，并提供各种计算机视觉算法和功能，如物体检测、人脸识别、图像处理等。</li>
+</ul>
+<div class="section-line"></div>
+<h2 id="ying-jian-jia-gou-zhi-chi">硬件架构支持</h2>
+<h3 id="armjia-gou">ARM架构:</h3>
+<h4 id="shu-mei-pai-raspberry-pi-xi-lie">树莓派（Raspberry Pi）系列</h4>
+<ul>
+<li>主芯片型号： Broadcom BCM2711 （Cortex A72 x 4核）</li>
+<li>树莓派是基于ARM架构的低成本、高性能单板计算机。辰龙操作系统将提供对树莓派系列的支持，以满足教育和嵌入式应用的需求。</li>
+</ul>
+<h4 id="fei-teng-pai-phytium-pi-xi-lie">飞腾派（Phytium Pi）系列</h4>
+<ul>
+<li>主芯片型号：飞腾4核处理器，包含2个FTC664核和2个FTC310核，兼容64 位ARMV8 指令集</li>
+<li>飞腾派是首款基于飞腾定制芯片的国产化开源硬件产品，采用飞腾自主设计的定制款嵌入式 CPU。</li>
+</ul>
+<h3 id="risc-vjia-gou">RISC-V架构:</h3>
+<h4 id="hua-shan-pai-huashan">华山派（HuaShan）</h4>
+<ul>
+<li>主芯片型号： 算能 CV1812H（玄铁 C906 x 2核）</li>
+<li>华山派是一款算能和生态伙伴硬件十万个为什么联合推出的基于RISC-V指令集架构的开源开发板，适用于学术研究和嵌入式系统开发。</li>
+</ul>
+<h4 id="li-zhi-pai-lychee">荔枝派（Lychee）</h4>
+<ul>
+<li>主芯片型号： 阿里平头哥 曳影TH1520（玄铁C910 x 4核）</li>
+<li>荔枝派也是一款基于RISC-V架构的开源开发板，它具有较高的可扩展性和灵活性。</li>
+</ul>
+<h3 id="loongarchjia-gou">LoongArch架构:</h3>
+<h4 id="long-xin-jiao-yu-pai-loongsonpai">龙芯教育派（loongsonpai）</h4>
+<ul>
+<li>主芯片型号：龙芯2K1000处理器</li>
+<li>2K1000是基于国产CPU架构LoongArch的芯片，具有自主知识产权。辰龙操作系统将支持LoongArch架构的芯片，以推动国产CPU在操作系统领域的应用。</li>
+</ul>
+<h4 id="xing-yun-kai-fa-ban">星云开发板</h4>
+<ul>
+<li>主芯片型号：龙芯2K1000LA（LoongArch64 架构兼容）</li>
+<li>龙芯2K1000是面向工业控制与终端等领域的低功耗通用处理器。芯片外围接口包括两路PCIE2.0、一路SATA2.0、4路USB2.0、两路DVO、64位DDR3及其它多种接口。</li>
+</ul>
+<h3 id="x86jia-gou">x86架构:</h3>
+<h4 id="qing-hua-tong-fang-pcji">清华同方PC机</h4>
+<ul>
+<li>主芯片型号：Intel Core i5 (大多数型号都采用了四核心设计。这些处理器通常配备了四个物理核心和四个线程，支持多线程处理)</li>
+<li>基于Intel i5的清华同方品牌机可以适用于各种不同的应用场景，包括日常办公、学习、娱乐和轻度游戏等。</li>
+</ul>
+<div class="section-line"></div>
+<h2 id="chen-long-cao-zuo-xi-tong-qi-yuan">辰龙操作系统起源</h2>
+<p>辰龙操作系统是由 <code>@asmcos</code>、<code>@limingth</code> 共同发起的开源项目，并得到了清华大学 <code>@chyyuu</code> 老师的大力支持。 本开源项目致力于打造安全操作系统的社区发行版本。</p>
+<h2 id="chen-long-cao-zuo-xi-tong-de-ye-wu-mo-shi">辰龙操作系统的业务模式</h2>
+<p>辰龙社区当前主要业务是适配迁移和技术服务,帮助企业在具体项目中移植适配 ArceOS 操作系统，并提供员工培训、技术支持和咨询服务。</p>
+<ol>
+<li>通过技术培训，辰龙帮助用户了解和掌握辰龙操作系统的特性和使用方法。</li>
+<li>提供适配迁移服务，帮助用户将其应用从其他操作系统迁移到辰龙操作系统上。</li>
+</ol>
+<h2 id="chen-long-cao-zuo-xi-tong-zong-jie">辰龙操作系统总结</h2>
+<ul>
+<li>辰龙操作系统发行版建立在 ArceOS 操作系统内核之上。</li>
+<li>通过利用 ArceOS 内核的优势和功能，辰龙发行版能够提供更好的稳定性、可靠性和安全性。</li>
+<li>辰龙发行版的近期目标是支持 ARM、RISC-V、LoongArch、x86 四种架构，对于每种架构，辰龙都将努力至少支持一款主流芯片和开发板，以满足不同用户的需求。</li>
+<li>辰龙操作系统发行版定位于基于 ArceOS 内核的发行版，致力于在多种硬件平台上进行适配和驱动开发，并提供技术培训和适配迁移服务。</li>
+<li>通过这些努力，辰龙旨在满足不同用户的需求，提供稳定可靠的操作系统解决方案.</li>
+</ul>
+</div>
+
+</div>
+
+                </div>
+            </section>
+        </div>
+    </div> 
+
+    <footer class="footer-container">
+        <div class="content">
+            <div class="title">ChenLong OS </div>
+            <ul class="footer-links">
+                
+                <li><a href=https:&#x2F;&#x2F;github.com&#x2F;chenlongos>组织主页</a></li>
+                
+                <li><a href=https:&#x2F;&#x2F;chenlongos.com&#x2F;raspi4-with-arceos-doc&#x2F;>树莓派技术文档</a></li>
+                
+                <li><a href=https:&#x2F;&#x2F;github.com&#x2F;chenlongos&#x2F;arceos>项目仓库</a></li>
+                
+                <li><a href=https:&#x2F;&#x2F;chenlongos.com&#x2F;x86-with-arceos-doc&#x2F;>X86技术文档</a></li>
+                
+                <li><a href=https:&#x2F;&#x2F;qa.arceos.cn&#x2F;>问答论坛</a></li>
+                
+                <li><a href=mailto:hello@arceos.cn>联系我们</a></li>
+                
+            </ul>
+        </div>
+        <div class="footer-notice">
+            <!-- <p class="is-size-6">
+                The content of this website is licensed <a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank">CC0</a>.
+            </p> -->
+            <p class="is-size-6">Copyright © 2023 ChenLongOS.</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://chenlongos.com/js/site.js"></script>
+</body>
+
+</html>
