@@ -6,7 +6,7 @@ compile_sass = true
 
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
-highlight_code = true
+# highlight_code = true
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
@@ -23,6 +23,7 @@ navbar = [
   # { name = "rCore", url = "/#" },
   # { name = "下载", url = "/#" },
   # { name = "Arce OS", url = "https://arceos.cn" },
+  { name = "新闻", url = "/news/"},
   # { name = "日志", url = "/#" },
   # { name = "文档", url = "/#" },
   { name = "view on github", url = "https://github.com/chenlongos/chenlongos.github.io/" },
