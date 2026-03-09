@@ -9,6 +9,7 @@
             align-items: center;
         }
     }
+
 }
 
 .titles {
@@ -78,6 +79,9 @@
     overflow-x: visible;
     padding: 0 4vw;
     margin: 0;
+    padding-top: 20px;
+    padding-bottom: 100px;
+    flex: 1;
 
     .column {
         width: 100%;
@@ -102,77 +106,319 @@
 
 .footer-container {
     background-color: #1D2830;
-    padding: 20px 4vw;
+    padding: 60px 0 30px 0; // 增加上下间距，提升高级感
     width: 100%;
+    color: #fff;
+    flex-shrink: 0;
 
+    .footer-wrapper {
+        width: 1200px; // 居中容器宽度
+        margin: 0 auto;
+        padding: 0 20px;
+    }
 
-    .content {
-        // height: 100px;
-        width: 100%;
-        height: max-content;
+    .footer-content {
         display: flex;
-        // margin-bottom: 80px;
-        padding: 40px 0;
-        color: #fff;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-bottom: 40px;
+        border-bottom: 1px solid rgba(201, 201, 201, 0.15); // 降低线条对比度，更柔和
 
-        border-bottom: 1px solid #c9c9c9;
+        .brand-section {
+            width: 40%;
 
-        .title {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50%;
-            font-family: Alibaba PuHuiTi 2.0;
-            font-size: 30px;
-            font-weight: 500;
-            line-height: 63.18px;
+            .footer-title {
+                font-family: "Alibaba PuHuiTi 2.0", sans-serif;
+                font-size: 28px;
+                font-weight: 600;
+                letter-spacing: 0.05em;
+                color: #fff;
+            }
+        }
+
+        .footer-links-nav {
+            width: 60%;
+
+            .footer-links {
+                display: grid; // 改用 Grid 布局，控制列数更精准
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px 40px;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+
+                li a {
+                    color: #e0e0e0;
+                    font-size: 15px;
+                    text-decoration: none;
+                    transition: color 0.3s ease;
+                    display: inline-block;
+
+                    &:hover {
+                        color: #fff;
+                        transform: translateX(3px); // 悬停微动
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-bottom {
+        padding-top: 30px;
+        text-align: center;
+
+        .copyright {
+            color: #8a9499; // 稍微调暗，突出主次
+            font-size: 14px;
             letter-spacing: 0.02em;
-            color: #fff;
-        }
-
-        .footer-links {
-            width: 50%;
-            flex: 1;
-            display: flex;
-            flex-wrap: wrap;
-            list-style: none;
-
-            li {
-                width: 50%;
-                margin-bottom: 10px;
-
-                a {
-                    color: #fff;
-
-                }
-
-                cursor: pointer;
-            }
-
-            @media screen and (max-width:768px) {
-                // flex-direction: column;\
-                // flex-wrap: wrap;
-                // gap: 30px;
-                flex-wrap: nowrap;
-                flex-direction: column;
-
-                li {
-                    width: 100%;
-                }
-            }
         }
     }
 
-    .footer-notice {
-        .is-size-6 {
-            color: #dad8d8;
+    // 响应式适配
+    @media screen and (max-width: 768px) {
+        padding: 40px 0 20px 0;
+
+        .footer-wrapper {
+            width: 100%;
+        }
+
+        .footer-content {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 30px;
+
+            .brand-section,
+            .footer-links-nav {
+                width: 100%;
+            }
+
+            .footer-links {
+                grid-template-columns: 1fr; // 移动端单列显示
+                gap: 12px;
+            }
         }
     }
-
 }
 
 .section-line {
     margin: 40px 0 40px 1em !important;
-    border-bottom: 1px solid  #00000050;
+    border-bottom: 1px solid #00000050;
     width: 100%;
+}
+
+// 新闻列表增强版
+.news-container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+
+    .page-title {
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin-bottom: 4rem;
+        letter-spacing: -0.02em;
+    }
+}
+
+.news-timeline {
+    position: relative;
+    padding-left: 3rem; // 增加左侧间距，让轴线更清晰
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 7px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background-color: #f0f0f0;
+    }
+
+    .timeline-item {
+        position: relative;
+        margin-bottom: 4rem; // 增加条目间距，强化“事件”感
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: -3rem;
+            top: 0.4rem;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #fff;
+            border: 4px solid #1D2830; // 使用原有页脚深色
+            z-index: 2;
+        }
+
+        .timeline-content {
+
+            // 时间块：显著加强
+            .item-date-wrapper {
+                margin-bottom: 0.75rem;
+
+                .item-date-accent {
+                    display: inline-block;
+                    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+                    font-size: 1.1rem;
+                    font-weight: 700;
+                    color: #6c7276; // 黑色加重
+                    background: #f4f4f4; // 极其浅的灰色底，不引入新色调
+                    padding: 0.2rem 0.6rem;
+                    border-radius: 4px;
+                    line-height: 1;
+                }
+            }
+
+            .item-body {
+                .item-title {
+                    display: block;
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                    letter-spacing: 0.05em;
+                    color: #000;
+                    text-decoration: none;
+                    line-height: 1.3;
+                    margin-bottom: 0.8rem;
+                    transition: opacity 0.2s;
+
+                    &:hover {
+                        opacity: 0.8;
+                        text-decoration: underline;
+                    }
+                }
+
+                .item-summary {
+                    font-size: 1.05rem;
+                    color: #4a4a4a;
+                    line-height: 1.6;
+                    // 限制摘要行数，保持整洁
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}
+
+// 手机端优化
+@media screen and (max-width: 768px) {
+    .news-timeline {
+        padding-left: 1.8rem;
+
+        &::before {
+            left: 5px;
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+
+            .timeline-marker {
+                left: -1.8rem;
+                width: 12px;
+                height: 12px;
+                top: 0.35rem;
+                border-width: 3px;
+            }
+
+            .timeline-content {
+                .item-date-wrapper .item-date-accent {
+                    font-size: 0.9rem;
+                }
+
+                .item-body .item-title {
+                    font-size: 1.25rem;
+                }
+            }
+        }
+    }
+}
+
+// 文章详情页布局
+.article-container {
+    max-width: 1200px; // 最佳阅读宽度
+    margin: 4rem auto; // 水平居中
+    padding: 0 1.5rem;
+
+    .article-header {
+        text-align: center; // 标题和元数据居中
+        margin-bottom: 4rem;
+
+        .article-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #111;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .article-meta {
+            font-size: 1rem;
+            color: #666;
+            font-style: normal; // 去掉斜体，显得更现代
+
+            .separator {
+                margin: 0 0.8rem;
+                color: #ccc;
+            }
+
+            .date {
+                font-family: monospace;
+            }
+        }
+    }
+
+    // 正文排版
+    .article-body {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: #333;
+        text-align: justify; // 两端对齐，看起来更整齐
+
+        // 针对 Markdown 中的图片
+        img {
+            display: block;
+            margin: 2rem auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+    }
+
+    .article-footer {
+        margin-top: 5rem;
+        padding-top: 2rem;
+        border-top: 1px solid #eee;
+        text-align: center;
+
+        .end-mark {
+            font-size: 0.8rem;
+            letter-spacing: 0.3em;
+            color: #bbb;
+        }
+    }
+}
+
+// 移动端适配
+@media screen and (max-width: 768px) {
+    .article-container {
+        margin: 2rem auto;
+
+        .article-header {
+            margin-bottom: 2.5rem;
+
+            .article-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        .article-body {
+            font-size: 1.05rem;
+        }
+    }
 }

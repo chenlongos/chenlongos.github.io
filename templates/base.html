@@ -19,7 +19,7 @@
             <a class="logo" href="{{ config.base_url }}">
                 <!-- <img class="navbar-logo" src="https://ssl.cdn.maodouketang.com/Fpkgonzaw5GTUFa0Bfvd_ZlO5yq1"
                     alt="ArceOS" /> -->
-                    ChenLong OS
+                ChenLong OS
                 <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
@@ -47,23 +47,28 @@
                 </div>
             </section>
         </div>
-    </div> 
-
+    </div>
     <footer class="footer-container">
-        <div class="content">
-            <div class="title">ChenLong OS </div>
-            <ul class="footer-links">
-                {% for link in config.extra.footers %}
-                <li><a href={{link.path}}>{{link.label}}</a></li>
-                {% endfor %}
-            </ul>
-        </div>
-        <div class="footer-notice">
-            <!-- <p class="is-size-6">
-                The content of this website is licensed <a href="https://creativecommons.org/share-your-work/public-domain/cc0/" target="_blank">CC0</a>.
-            </p> -->
-            <p class="is-size-6">Copyright © 2023 ChenLongOS.</a>
-            </p>
+        <div class="footer-wrapper">
+            <div class="footer-content">
+                <div class="brand-section">
+                    <div class="footer-title">ChenLong OS</div>
+                </div>
+
+                <nav class="footer-links-nav">
+                    <ul class="footer-links">
+                        {% for link in config.extra.footers %}
+                        <li><a href="{{ link.path }}">{{ link.label }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-notice">
+                    <p class="copyright">Copyright © 2023 ChenLongOS. All rights reserved.</p>
+                </div>
+            </div>
         </div>
     </footer>
 

@@ -12,8 +12,8 @@
 body {
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    scroll-behavior:smooth;
+    min-height: 100vh;
+    scroll-behavior: smooth;
     // overflow-x: hidden;、
     font-size: 1em;
 }
@@ -52,7 +52,7 @@ a:hover.title {
 
 .resources {
     padding-left: 1.5em;
-    border-left: 2px solid hsl(0, 0%, 86%) ;
+    border-left: 2px solid hsl(0, 0%, 86%);
 }
 
 .resources dt {
@@ -87,16 +87,20 @@ a:hover.title {
 .footer h4 {
     color: white;
 }
-h1{
+
+h1 {
     font-size: 2em !important;
 }
-h2{
+
+h2 {
     font-size: 1.5em !important;
 }
-h3{
+
+h3 {
     font-size: 1.25em !important;
     margin-top: 0 !important;
 }
-h4{
+
+h4 {
     font-size: 1em !important;
 }

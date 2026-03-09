@@ -3,18 +3,30 @@
 {% block title %}News{% endblock title %}
 
 {% block content %}
-<h1 class="title">News</h1>
+<div class="news-container">
+    <h1 class="page-title">新闻 & 资讯</h1>
 
-{% for post in section.pages %}
-<div class="card block">
-    <div class="card-content is-flex">
-        <a class="title my-0" href="{{ post.permalink }}">
-            {{ post.title }}
-        </a>
-        <p class="subtitle ml-auto my-auto">
-            {{ post.date }}
-        </p>
+    <div class="news-timeline">
+        {% for post in section.pages %}
+        <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            
+            <div class="timeline-content">
+                <div class="item-date-wrapper">
+                    <time class="item-date-accent">{{ post.date }}</time>
+                </div>
+                
+                <div class="item-body">
+                    <a class="item-title" href="{{ post.permalink }}">
+                        {{ post.title }}
+                    </a>
+                    {% if post.summary %}
+                    <div class="item-summary">{{ post.summary | safe }}</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 </div>
-{% endfor %}
 {% endblock content %}
