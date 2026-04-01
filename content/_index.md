@@ -87,7 +87,7 @@ desc = "基于清华大学 ArceOS 操作系统的发行版"
 <!-- ![辰龙操作系统](/robot.png) -->
 <img src="/robot.png" alt="辰龙操作系统" width="1000px">
 
-## 联系我们：
+## 辰龙机器人客服：
 ![chenlongos@outlook.com](/contact.png)
 
   
