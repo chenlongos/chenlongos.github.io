@@ -49,6 +49,6 @@ footers = [
   { label = "树莓派技术文档", path = 'https://chenlongos.com/raspi4-with-arceos-doc/' },
   { label = "项目仓库", path = 'https://github.com/chenlongos/arceos' },
   { label = "X86技术文档", path = 'https://chenlongos.com/x86-with-arceos-doc/' },
-  { label = "问答论坛", path = 'https://qa.arceos.cn/' },
-  { label = "联系我们", path = 'mailto:hello@arceos.cn' },
+  # { label = "问答论坛", path = 'https://qa.arceos.cn/' },
+  # { label = "联系我们", path = 'mailto:hello@arceos.cn' },
 ]

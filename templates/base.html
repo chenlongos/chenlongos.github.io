@@ -58,10 +58,15 @@
                 <nav class="footer-links-nav">
                     <ul class="footer-links">
                         {% for link in config.extra.footers %}
-                        <li><a href="{{ link.path }}">{{ link.label }}</a></li>
+                        <li><a target="_blank" href="{{ link.path }}">{{ link.label }}</a></li>
                         {% endfor %}
                     </ul>
                 </nav>
+                <!-- 联系我们 -->
+                <div>
+                    <img width="120" src="{{ get_url(path='contact.png') }}" alt="联系我们" />
+                    <p class="contact-wrap">联系我们</p>
+                </div>
             </div>
 
             <div class="footer-bottom">
