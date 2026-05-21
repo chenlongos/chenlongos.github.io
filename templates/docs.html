@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block title %}文档中心 - 辰龙操作系统{% endblock title %}
+
+{% block hero %}
+<section class="page-hero">
+    <div class="container">
+        <h1>开发者文档中心</h1>
+        <p>完整的技术文档和开发指南</p>
+    </div>
+</section>
+{% endblock hero %}
+
+{% block content %}
+<section class="docs-section">
+    <div class="container">
+        <div class="docs-sidebar">
+            <div class="sidebar-section">
+                <h3>入门指南</h3>
+                <ul>
+                    <li><a href="#">快速开始</a></li>
+                    <li><a href="#">安装教程</a></li>
+                    <li><a href="#">系统概览</a></li>
+                    <li><a href="#">基本概念</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <h3>开发指南</h3>
+                <ul>
+                    <li><a href="#">内核开发</a></li>
+                    <li><a href="#">驱动开发</a></li>
+                    <li><a href="#">应用开发</a></li>
+                    <li><a href="#">调试技巧</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <h3>API 参考</h3>
+                <ul>
+                    <li><a href="#">内核 API</a></li>
+                    <li><a href="#">系统调用</a></li>
+                    <li><a href="#">库函数</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <h3>高级主题</h3>
+                <ul>
+                    <li><a href="#">ROS/ROS2 集成</a></li>
+                    <li><a href="#">DDS 通信</a></li>
+                    <li><a href="#">OpenCV 应用</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="docs-content">
+            <div class="docs-search">
+                <input type="text" placeholder="搜索文档..." class="search-input">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            
+            <div class="docs-categories">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>快速入门</h3>
+                    <p>从零开始学习辰龙操作系统</p>
+                    <div class="category-count">5 篇文档</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>开发指南</h3>
+                    <p>深入了解内核和应用开发</p>
+                    <div class="category-count">12 篇文档</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>API 文档</h3>
+                    <p>完整的应用程序接口参考</p>
+                    <div class="category-count">8 篇文档</div>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>机器人开发</h3>
+                    <p>ROS/ROS2 集成和机器人应用</p>
+                    <div class="category-count">6 篇文档</div>
+                </div>
+            </div>
+            
+            <div class="recent-updates">
+                <h3>最近更新</h3>
+                <div class="update-list">
+                    <div class="update-item">
+                        <span class="update-date">2024-01-15</span>
+                        <a href="#">新增 ROS2 Humble 支持文档</a>
+                    </div>
+                    <div class="update-item">
+                        <span class="update-date">2024-01-10</span>
+                        <a href="#">更新驱动开发指南</a>
+                    </div>
+                    <div class="update-item">
+                        <span class="update-date">2024-01-05</span>
+                        <a href="#">新增 RISC-V 架构文档</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

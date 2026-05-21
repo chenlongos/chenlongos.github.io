@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+
+{% block title %}社区 - 辰龙操作系统{% endblock title %}
+
+{% block hero %}
+<section class="page-hero">
+    <div class="container">
+        <h1>加入社区</h1>
+        <p>与全球开发者一起共建开源生态</p>
+    </div>
+</section>
+{% endblock hero %}
+
+{% block content %}
+<section class="community-section">
+    <div class="container">
+        <div class="community-grid">
+            <div class="community-card">
+                <div class="community-icon github">
+                    <i class="fab fa-github"></i>
+                </div>
+                <h3>GitHub</h3>
+                <p>提交代码、报告问题、参与讨论</p>
+                <a href="https://github.com/chenlongos" class="btn btn-primary">访问 GitHub</a>
+            </div>
+            
+            <div class="community-card">
+                <div class="community-icon wechat">
+                    <i class="fab fa-weixin"></i>
+                </div>
+                <h3>微信群</h3>
+                <p>扫码加入微信群，与开发者实时交流</p>
+                <div class="qrcode-container">
+                    <div class="qrcode-placeholder">
+                        <i class="fas fa-qrcode"></i>
+                        <span>微信群二维码</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="community-card">
+                <div class="community-icon qq">
+                    <i class="fab fa-qq"></i>
+                </div>
+                <h3>QQ 群</h3>
+                <p>加入 QQ 群，获取技术支持和最新资讯</p>
+                <div class="qrcode-container">
+                    <div class="qrcode-placeholder">
+                        <i class="fas fa-qrcode"></i>
+                        <span>QQ 群二维码</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contribute-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>如何贡献</h2>
+            <p>每个人都可以为辰龙操作系统贡献力量</p>
+        </div>
+        
+        <div class="contribute-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>了解项目</h3>
+                    <p>阅读文档，了解项目架构和代码规范</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>选择任务</h3>
+                    <p>从 GitHub Issues 中选择感兴趣的任务</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>提交贡献</h3>
+                    <p>提交 PR，参与代码审查和讨论</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contribution-guides">
+    <div class="container">
+        <div class="guides-grid">
+            <div class="guide-item">
+                <div class="guide-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>代码贡献</h3>
+                <p>参与内核开发、驱动开发、应用开发等</p>
+                <a href="#" class="guide-link">
+                    <span>查看指南</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="guide-item">
+                <div class="guide-icon">
+                    <i class="fas fa-file-text"></i>
+                </div>
+                <h3>文档贡献</h3>
+                <p>完善技术文档和使用指南</p>
+                <a href="#" class="guide-link">
+                    <span>查看指南</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="guide-item">
+                <div class="guide-icon">
+                    <i class="fas fa-bug"></i>
+                </div>
+                <h3>Bug 报告</h3>
+                <p>报告问题，帮助改进软件质量</p>
+                <a href="#" class="guide-link">
+                    <span>查看指南</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="guide-item">
+                <div class="guide-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>社区支持</h3>
+                <p>帮助其他用户，参与社区讨论</p>
+                <a href="#" class="guide-link">
+                    <span>查看指南</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="team-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>核心团队</h2>
+            <p>感谢所有为辰龙操作系统做出贡献的开发者</p>
+        </div>
+        
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <span class="member-name">@asmcos</span>
+                <span class="member-role">项目发起人</span>
+            </div>
+            <div class="team-member">
+                <div class="member-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <span class="member-name">@limingth</span>
+                <span class="member-role">项目发起人</span>
+            </div>
+            <div class="team-member">
+                <div class="member-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <span class="member-name">@chyyuu</span>
+                <span class="member-role">技术顾问</span>
+            </div>
+        </div>
+        
+        <div class="contributor-stats">
+            <div class="stat">
+                <span class="stat-value">50+</span>
+                <span class="stat-label">社区贡献者</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value">200+</span>
+                <span class="stat-label">PR 提交</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value">100+</span>
+                <span class="stat-label">Issues 解决</span>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

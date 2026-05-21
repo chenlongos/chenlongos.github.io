@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+
+{% block title %}案例展示 - 辰龙操作系统{% endblock title %}
+
+{% block hero %}
+<section class="page-hero">
+    <div class="container">
+        <h1>案例展示</h1>
+        <p>了解辰龙操作系统的实际应用案例</p>
+    </div>
+</section>
+{% endblock hero %}
+
+{% block content %}
+<section class="cases-section">
+    <div class="container">
+        <div class="case-filters">
+            <button class="filter-btn active" data-filter="all">全部案例</button>
+            <button class="filter-btn" data-filter="robot">机器人</button>
+            <button class="filter-btn" data-filter="iot">物联网</button>
+            <button class="filter-btn" data-filter="education">教育</button>
+        </div>
+        
+        <div class="cases-grid">
+            <div class="case-card" data-category="robot">
+                <div class="case-image">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="case-content">
+                    <span class="case-tag">机器人</span>
+                    <h3>智能巡检机器人</h3>
+                    <p>基于辰龙操作系统开发的智能巡检机器人，应用于工业厂区自动化巡检场景。</p>
+                    <div class="case-meta">
+                        <span>某大型制造企业</span>
+                        <span>2024年</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-card" data-category="iot">
+                <div class="case-image">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <div class="case-content">
+                    <span class="case-tag">物联网</span>
+                    <h3>智慧农业监控系统</h3>
+                    <p>基于辰龙操作系统的物联网网关解决方案，实现农业大棚智能化管理。</p>
+                    <div class="case-meta">
+                        <span>某农业科技公司</span>
+                        <span>2024年</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-card" data-category="education">
+                <div class="case-image">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="case-content">
+                    <span class="case-tag">教育</span>
+                    <h3>AI教育机器人平台</h3>
+                    <p>面向中小学的人工智能教育机器人平台，支持图形化编程和Python开发。</p>
+                    <div class="case-meta">
+                        <span>某教育机构</span>
+                        <span>2023年</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-card" data-category="robot">
+                <div class="case-image">
+                    <i class="fas fa-car"></i>
+                </div>
+                <div class="case-content">
+                    <span class="case-tag">机器人</span>
+                    <h3>自主移动机器人</h3>
+                    <p>基于ROS2的自主导航移动机器人，应用于仓储物流自动化场景。</p>
+                    <div class="case-meta">
+                        <span>某物流科技公司</span>
+                        <span>2024年</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-card" data-category="iot">
+                <div class="case-image">
+                    <i class="fas fa-city"></i>
+                </div>
+                <div class="case-content">
+                    <span class="case-tag">物联网</span>
+                    <h3>智慧城市终端</h3>
+                    <p>基于辰龙操作系统的智慧城市终端解决方案，支持多种传感器接入。</p>
+                    <div class="case-meta">
+                        <span>某智慧城市项目</span>
+                        <span>2023年</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-card" data-category="education">
+                <div class="case-image">
+                    <i class="fas fa-microscope"></i>
+                </div>
+                <div class="case-content">
+                    <span class="case-tag">教育</span>
+                    <h3>高校科研平台</h3>
+                    <p>为高校提供的机器人研发平台，支持多种硬件架构和算法开发。</p>
+                    <div class="case-meta">
+                        <span>某知名高校</span>
+                        <span>2023年</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials">
+    <div class="container">
+        <div class="section-header">
+            <h2>用户评价</h2>
+            <p>听听用户怎么说</p>
+        </div>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"辰龙操作系统为我们的机器人项目提供了稳定可靠的基础平台，其对ROS2的原生支持大大降低了开发难度。"</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="author-info">
+                        <span class="author-name">张工程师</span>
+                        <span class="author-title">某机器人公司技术总监</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"作为教育机构，我们选择辰龙操作系统是因为它的开源特性和跨平台支持，非常适合教学和研究。"</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="author-info">
+                        <span class="author-name">李教授</span>
+                        <span class="author-title">某高校计算机学院</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"辰龙操作系统的社区支持非常活跃，遇到问题能很快得到解答，非常感谢社区的帮助。"</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="author-info">
+                        <span class="author-name">王开发者</span>
+                        <span class="author-title">独立开发者</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

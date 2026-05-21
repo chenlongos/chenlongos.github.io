@@ -1,54 +1,66 @@
-# The URL the site will be built for
 base_url = "https://chenlongos.com/"
 
-# Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
-
-# Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
-# highlight_code = true
-
-# Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
 title = "ChenlongOS"
-description = ""
+description = "辰龙操作系统 - 面向机器人的开源操作系统发行版，基于清华大学 ArceOS 内核"
 
-minify_html = false
+minify_html = true
 
 [extra]
-githubUrl = "https://github.com/chenlongos/chenlongos.github.io/"
+githubUrl = "https://github.com/chenlongos/"
+wechatUrl = "https://mp.weixin.qq.com/s/chenlongos"
+
 navbar = [
-  # { name = "主页", url = "/#" },
-  # { name = "rCore", url = "/#" },
-  # { name = "下载", url = "/#" },
-  # { name = "Arce OS", url = "https://arceos.cn" },
-  { name = "新闻", url = "/news/"},
-  # { name = "日志", url = "/#" },
-  # { name = "文档", url = "/#" },
-  { name = "view on github", url = "https://github.com/chenlongos/chenlongos.github.io/" },
+  { name = "首页", url = "/" },
+  { name = "下载", url = "/download/" },
+  { name = "文档", url = "/docs/" },
+  { name = "案例", url = "/cases/" },
+  { name = "新闻", url = "/news/" },
+  { name = "社区", url = "/community/" },
 ]
 
-menus = [
-  { label = "设计目标", path = '#nav1' },
-  { label = "现有功能", path = '#nav2' },
-  { label = "整体架构", path = '#nav3' },
-  { label = "组件设计", path = '#nav4' },
-  { label = "代码统计", path = '#nav5' },
-  { label = "功能演示", path = '#nav6' },
-  { label = "最新进展", path = '#nav7' },
+features = [
+  { icon = "shield", title = "高安全性", description = "基于微内核架构，提供多层次安全防护机制" },
+  { icon = "zap", title = "高性能", description = "Rust 原生实现，零运行时开销，极致性能" },
+  { icon = "cubes", title = "模块化设计", description = "组件化架构，灵活定制，按需裁剪" },
+  { icon = "globe", title = "跨平台", description = "支持 ARM、RISC-V、LoongArch、x86 多种架构" },
+  { icon = "code", title = "开源开放", description = "MIT 许可证，完全开源，社区驱动" },
+  { icon = "robot", title = "机器人支持", description = "内置 ROS/ROS2 支持，专为机器人设计" },
 ]
 
-external = [
-  { name = "Rust Language Website", url = "https://rust-lang.org" },
-  { name = "Official Rust Book", url = "https://doc.rust-lang.org/book/" },
+stats = [
+  { value = "4+", label = "支持架构" },
+  { value = "10+", label = "开发板适配" },
+  { value = "50+", label = "社区贡献者" },
+  { value = "10K+", label = "GitHub Stars" },
+]
+
+robot_versions = [
+  { 
+    name = "v0.4", 
+    date = "2026-05-20", 
+    download_url = "https://github.com/chenlongos/AKA-00/releases/download/v0.4/sd_licheervnano_with_AKA00_v0_4.img.xz", 
+    checksum_url = "https://github.com/chenlongos/AKA-00/releases/download/v0.4/sd_licheervnano_with_AKA00_v0_4.img.md5" 
+  },
+  { 
+    name = "v0.3", 
+    date = "2026-04-17", 
+    download_url = "https://github.com/chenlongos/AKA-00/releases/download/v0.3/sd_licheervnano_with_AKA00_v0_3.img.xz", 
+    checksum_url = "https://github.com/chenlongos/AKA-00/releases/download/v0.3/sd_licheervnano_with_AKA00_v0_3.img.md5" 
+  },
+  { 
+    name = "v0.2", 
+    date = "2026-03-11", 
+    download_url = "https://github.com/chenlongos/AKA-00/releases/download/v0.2/sd_licheervnano_with_AKA00_v0_2.img.xz", 
+    checksum_url = "https://github.com/chenlongos/AKA-00/releases/download/v0.2/sd_licheervnano_with_AKA00_v0_2.img.md5" 
+  },
 ]
 
 footers = [
-  { label = "组织主页", path = 'https://github.com/chenlongos' },
-  { label = "树莓派技术文档", path = 'https://chenlongos.com/raspi4-with-arceos-doc/' },
-  { label = "项目仓库", path = 'https://github.com/chenlongos/arceos' },
-  { label = "X86技术文档", path = 'https://chenlongos.com/x86-with-arceos-doc/' },
-  # { label = "问答论坛", path = 'https://qa.arceos.cn/' },
-  # { label = "联系我们", path = 'mailto:hello@arceos.cn' },
+  { label = "GitHub", path = "https://github.com/chenlongos" },
+  { label = "项目仓库", path = "https://github.com/chenlongos/chenlong" },
+  { label = "技术文档", path = "https://chenlongos.com/docs/" },
+  { label = "问答论坛", path = "https://qa.arceos.cn/" },
 ]

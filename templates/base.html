@@ -1,78 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ config.description }}">
+    <meta name="theme-color" content="#2563eb">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
     <link href="{{ get_url(path='style.css') }}" rel="stylesheet" />
-    <link href="{{ get_url(path='home.css') }}" rel="stylesheet" />
 
     {% block head %}{% endblock head %}
 
-    <title>{% block title %}{% endblock title %} - ChenlongOS</title>
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
 </head>
 
 <body>
-    <nav class="navbar " role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="logo" href="{{ config.base_url }}">
-                <!-- <img class="navbar-logo" src="https://ssl.cdn.maodouketang.com/Fpkgonzaw5GTUFa0Bfvd_ZlO5yq1"
-                    alt="ArceOS" /> -->
-                ChenLong OS
-                <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-logo" href="{{ config.base_url }}">
+                    <span class="logo-icon">
+                        <i class="fas fa-robot"></i>
+                    </span>
+                    <span class="logo-text">ChenlongOS</span>
                 </a>
-            </a>
-        </div>
-        <div class="navbar-menu" id="navMenu">
-            <div class="navbar-end">
-                {% for item in config.extra.navbar %}
-                <a class="navbar-item has-text-weight-semibold"
-                    href="{{ item.url | replace(from='$BASE_URL', to=config.base_url) }}">
-                    {{ item.name }}
-                </a>
-                {% endfor %}
+                <button class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="navbar-menu" id="navMenu">
+                <div class="navbar-start">
+                    {% for item in config.extra.navbar %}
+                    <a class="navbar-item" href="{{ item.url | replace(from='$BASE_URL', to=config.base_url) }}">
+                        {{ item.name }}
+                    </a>
+                    {% endfor %}
+                </div>
+                <div class="navbar-end">
+                    <a class="github-link" href="{{ config.extra.githubUrl }}" target="_blank">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <div class="main-content ">
-        <div class="column">
-            <section class="section">
-                <div class="container">
-                    {% block content %}{% endblock content %}
-                </div>
-            </section>
-        </div>
-    </div>
-    <footer class="footer-container">
-        <div class="footer-wrapper">
-            <div class="footer-content">
-                <div class="brand-section">
-                    <div class="footer-title">ChenLong OS</div>
-                </div>
+    {% block hero %}{% endblock hero %}
 
-                <nav class="footer-links-nav">
-                    <ul class="footer-links">
+    <main class="main-content">
+        {% block content %}{% endblock content %}
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-icon">
+                            <i class="fas fa-robot"></i>
+                        </span>
+                        <span class="logo-text">ChenlongOS</span>
+                    </div>
+                    <p class="footer-desc">面向机器人的开源操作系统发行版</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
                         {% for link in config.extra.footers %}
-                        <li><a target="_blank" href="{{ link.path }}">{{ link.label }}</a></li>
+                        <li><a href="{{ link.path }}">{{ link.label }}</a></li>
                         {% endfor %}
                     </ul>
-                </nav>
-                <!-- 联系我们 -->
-                <div>
-                    <img width="120" src="{{ get_url(path='contact.png') }}" alt="联系我们" />
-                    <p class="contact-wrap">联系我们</p>
+                </div>
+                <div class="footer-section">
+                    <h4>关注我们</h4>
+                    <div class="social-links">
+                        <a href="{{ config.extra.githubUrl }}" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="{{ config.extra.wechatUrl }}" target="_blank" title="微信">
+                            <i class="fab fa-weixin"></i>
+                        </a>
+                    </div>
+                    <p class="wechat-name">微信公众号: ChenLongOS</p>
                 </div>
             </div>
-
             <div class="footer-bottom">
-                <div class="footer-notice">
-                    <p class="copyright">Copyright © 2023 ChenLongOS. All rights reserved.</p>
-                </div>
+                <p>&copy; 2024 ChenlongOS. All rights reserved.</p>
+                <p>基于 <a href="https://arceos.cn">ArceOS</a> 构建 | <a href="https://github.com/chenlongos/arceos/blob/main/LICENSE">MIT License</a></p>
             </div>
         </div>
     </footer>

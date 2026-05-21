@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}下载 - 辰龙操作系统{% endblock title %}
+
+{% block hero %}
+<section class="page-hero">
+    <div class="container">
+        <h1>下载辰龙操作系统</h1>
+        <p>选择适合您机器人类型的镜像进行下载</p>
+    </div>
+</section>
+{% endblock hero %}
+
+{% block content %}
+<section class="download-section">
+    <div class="container">
+        <div class="download-content">
+            <div class="robot-card">
+                <div class="robot-header">
+                    <div class="robot-info">
+                        <h3>AKA-00 机器人</h3>
+                        <p class="robot-desc">AI 教育机器人平台</p>
+                    </div>
+                </div>
+                
+                <div class="versions-list">
+                    {% for version in config.extra.robot_versions %}
+                    <div class="version-item">
+                        <div class="version-header">
+                            <span class="version-name">{{ version.name }}</span>
+                            <span class="release-date">{{ version.date }}</span>
+                        </div>
+                        
+                        <div class="download-links">
+                            <a href="{{ version.download_url }}" class="download-link">
+                                <i class="fas fa-download"></i>
+                                <span>下载镜像</span>
+                            </a>
+                            <a href="{{ version.checksum_url }}" class="download-link">
+                                <i class="fas fa-file-check"></i>
+                                <span>MD5 校验文件</span>
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="installation-guide">
+    <div class="container">
+        <div class="section-header">
+            <h2>安装指南</h2>
+            <p>详细的安装步骤和系统要求</p>
+        </div>
+        
+        <div class="guide-content">
+            <div class="guide-card">
+                <div class="guide-icon">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <h3>系统要求</h3>
+                <ul>
+                    <li>内存: 至少 2GB RAM</li>
+                    <li>存储: 至少 8GB 可用空间</li>
+                    <li>处理器: ARM/RISC-V/LoongArch/x86 架构</li>
+                </ul>
+            </div>
+            
+            <div class="guide-card">
+                <div class="guide-icon">
+                    <i class="fas fa-file-upload"></i>
+                </div>
+                <h3>安装步骤</h3>
+                <ol>
+                    <li>下载对应机器人类型的镜像文件</li>
+                    <li>下载 MD5 校验文件验证完整性</li>
+                    <li>制作启动 U 盘或烧录到 SD 卡</li>
+                    <li>从 U 盘/SD 卡启动设备</li>
+                    <li>按照安装向导完成安装</li>
+                </ol>
+            </div>
+            
+            <div class="guide-card">
+                <div class="guide-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3>详细文档</h3>
+                <p>查看完整的安装文档和教程</p>
+                <a href="/docs/" class="btn btn-outline">阅读文档</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
