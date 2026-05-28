@@ -1540,3 +1540,23 @@ body {
         text-align: center;
     }
 }
+
+.case-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    font-size: 14px;
+    color: $primary-color;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.case-link:hover {
+    color: $primary-dark;
+}
+
+.case-link i {
+    font-size: 12px;
+}
