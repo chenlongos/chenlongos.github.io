@@ -64,3 +64,22 @@ footers = [
   { label = "技术文档", path = "https://chenlongos.com/docs/" },
   { label = "问答论坛", path = "https://qa.arceos.cn/" },
 ]
+
+contributors = [
+  { login = "asmcos", name = "@asmcos", role = "项目发起人", avatar = "https://github.com/asmcos.png" },
+  { login = "BoBoDai", name = "@BoBoDai", role = "开发者", avatar = "https://github.com/BoBoDai.png" },
+  { login = "chyyuu", name = "@chyyuu", role = "技术顾问", avatar = "https://github.com/chyyuu.png" },
+  { login = "DongJianHao123", name = "@DongJianHao123", role = "开发者", avatar = "https://github.com/DongJianHao123.png" },
+  { login = "kunyuanxu-star", name = "@kunyuanxu-star", role = "开发者", avatar = "https://github.com/kunyuanxu-star.png" },
+  { login = "limingth", name = "@limingth", role = "项目发起人", avatar = "https://github.com/limingth.png" },
+  { login = "moyufei-MAX", name = "@moyufei-MAX", role = "开发者", avatar = "https://github.com/moyufei-MAX.png" },
+  { login = "pengzechen", name = "@pengzechen", role = "开发者", avatar = "https://github.com/pengzechen.png" },
+  { login = "q23818", name = "@q23818", role = "开发者", avatar = "https://github.com/q23818.png" },
+  { login = "shzhxh", name = "@shzhxh", role = "开发者", avatar = "https://github.com/shzhxh.png" },
+  { login = "yydawx", name = "@yydawx", role = "开发者", avatar = "https://github.com/yydawx.png" },
+]
+
+acknowledgments = [
+  { name = "ArceOS", description = "用Rust写的模块化内核", url = "https://github.com/arceos-org/arceos", stars = "5.4k" },
+  { name = "Starry-OS", description = "基于Arceos的组件化宏内核", url = "https://github.com/Starry-OS/Starry", stars = "1.2k" },
+]
