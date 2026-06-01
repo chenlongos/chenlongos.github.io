@@ -1560,3 +1560,179 @@ body {
 .case-link i {
     font-size: 12px;
 }
+
+.news-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 120px 20px 80px;
+}
+
+.news-container .page-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.news-timeline {
+    position: relative;
+    padding-left: 24px;
+}
+
+.news-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: $border-color;
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 32px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -29px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    background: $primary-color;
+    border-radius: 50%;
+    border: 2px solid $bg-color;
+    box-shadow: 0 0 0 2px $primary-color;
+}
+
+.timeline-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.item-date-wrapper {
+    display: inline-block;
+}
+
+.item-date-accent {
+    font-size: 14px;
+    font-weight: 600;
+    color: $primary-color;
+    white-space: nowrap;
+}
+
+.item-body {
+    flex: 1;
+}
+
+.item-title {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    color: $text-primary;
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.item-title:hover {
+    color: $primary-color;
+}
+
+.item-summary {
+    font-size: 14px;
+    color: $text-secondary;
+    line-height: 1.6;
+}
+
+.article-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 120px 20px 80px;
+}
+
+.article-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.article-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: 16px;
+}
+
+.article-meta {
+    font-size: 14px;
+    color: $text-muted;
+}
+
+.article-meta .author {
+    font-weight: 500;
+}
+
+.article-meta .separator {
+    margin: 0 8px;
+}
+
+.article-body {
+    font-size: 16px;
+    line-height: 1.8;
+    color: $text-primary;
+}
+
+.article-body h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 32px 0 16px;
+    color: $text-primary;
+}
+
+.article-body h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 24px 0 12px;
+    color: $text-primary;
+}
+
+.article-body p {
+    margin-bottom: 16px;
+}
+
+.article-body ul,
+.article-body ol {
+    margin-left: 24px;
+    margin-bottom: 16px;
+}
+
+.article-body li {
+    margin-bottom: 8px;
+}
+
+.article-body a {
+    color: $primary-color;
+    text-decoration: underline;
+}
+
+.article-footer {
+    text-align: center;
+    margin-top: 48px;
+}
+
+.end-mark {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    color: $text-muted;
+    padding: 8px 24px;
+    border-top: 2px solid $border-color;
+    border-bottom: 2px solid $border-color;
+}
