@@ -1,0 +1,34 @@
+<!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta content="width=device-width,initial-scale=1" name=viewport><meta content="辰龙操作系统 - 面向机器人的开源操作系统发行版，基于清华大学 ArceOS 内核" name=description><meta content=#2563eb name=theme-color><link href=https://fonts.googleapis.com rel=preconnect><link crossorigin href=https://fonts.gstatic.com rel=preconnect><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel=stylesheet><link href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css rel=stylesheet><link href=https://chenlongos.com/style.css rel=stylesheet><title>Rock4D 开发板 YOLO 推理部署指南</title><body><nav aria-label="main navigation" class=navbar role=navigation><div class=container><div class=navbar-brand><a class=navbar-logo href=https://chenlongos.com/> <span class=logo-icon> <i class="fas fa-robot"></i> </span> <span class=logo-text>ChenlongOS</span> </a><button aria-expanded=false aria-label=menu class=navbar-burger data-target=navMenu><span aria-hidden=true></span> <span aria-hidden=true></span> <span aria-hidden=true></span></button></div><div class=navbar-menu id=navMenu><div class=navbar-start><a class=navbar-item href=/> 首页 </a><a class=navbar-item href=/download/> 下载 </a><a class=navbar-item href=/docs/> 文档 </a><a class=navbar-item href=/cases/> 案例 </a><a class=navbar-item href=/news/> 新闻 </a><a class=navbar-item href=/community/> 社区 </a></div><div class=navbar-end><a class=github-link href=https://github.com/chenlongos/ target=_blank> <i class="fab fa-github"></i> <span>GitHub</span> </a></div></div></div></nav><main class=main-content><article class=article-container><header class=article-header><h1 class=article-title>Rock4D 开发板 YOLO 推理部署指南</h1><div class=article-meta><time class=date>2026-06-12</time></div></header><div class="content article-body"><h1 id=rock4d-kai-fa-ban-yolo-tui-li-bu-shu-zhi-nan>Rock4D 开发板 YOLO 推理部署指南</h1><h2 id=1-kai-fa-ban-jian-jie>1. 开发板简介</h2><p>Rock4D 是一款基于 Rockchip RK3588 处理器的高性能开发板，具有以下特点：<ul><li><strong>CPU</strong>: 八核 ARM Cortex-A76 + Cortex-A55<li><strong>NPU</strong>: 6TOPS 算力的神经网络处理器<li><strong>内存</strong>: 8GB/16GB LPDDR4X<li><strong>存储</strong>: eMMC 5.1 + MicroSD + NVMe SSD<li><strong>接口</strong>: PCIe 3.0、USB 3.2、HDMI 2.1、MIPI CSI</ul><h2 id=2-huan-jing-zhun-bei>2. 环境准备</h2><h3 id=2-1-jing-xiang-shao-lu-yu-deng-lu>2.1 镜像烧录与登陆</h3><pre><code data-lang=bash>dd if=&lt;img> of=&lt;blk> bs=1M status=progress conv=fsync
+minicom -D /dev/ttyUSB0 -b 1500000
+# 用户名密码：radxa, radxa
+</code></pre><h3 id=2-2-an-zhuang-xi-tong-geng-xin>2.2 安装系统更新</h3><pre><code data-lang=bash>rsetup
+# System -> System Update
+</code></pre><h3 id=2-3-an-zhuang-qu-dong-he-ku>2.3 安装驱动和库</h3><pre><code data-lang=bash># 安装miniforge
+bash Miniforge3-25.11.0-0-Linux-x86_64.sh
+conda create -n rknn python=3.12
+conda activate rknn
+# 安装lerobot
+conda install ffmpeg -c conda-forge
+sudo apt-get install cmake build-essential python3-dev pkg-config libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libswresample-dev libavfilter-dev
+pip install 'lerobot[feetech]' -i https://mirrors.aliyun.com/pypi/simple/
+pip install torchvision==0.17.0    # 降级以解决依赖问题。如果模型能正常运行则不需要此操作。
+# 安装rknn
+sudo apt install cmake build-essential
+pip install -r arm64_requirements_cp312.txt -i https://mirrors.aliyun.com/pypi/simple/
+pip install rknn_toolkit2-2.3.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl -i https://mirrors.aliyun.com/pypi/simple/
+</code></pre><h2 id=3-yolo-mo-xing-zhun-bei>3. YOLO 模型准备</h2><p>基本思路：rk3576对fp16精度支持不好，需使用init8量化。<h3 id=3-1-ptzhuan-onnx>3.1 pt转onnx</h3><pre><code data-lang=bash>git clone https://github.com/airockchip/ultralytics_yolo11.git && cd ultralytics_yolo11
+vim ./ultralytics/cfg/default.yaml
+    # model要改为pt模型的路径
+export PYTHONPATH=./
+python3 ./ultralytics/engine/exporter.py
+</code></pre><h3 id=3-2-onnxzhuan-rknn>3.2 onnx转rknn</h3><pre><code data-lang=bash>git clone -b v2.3.2 https://github.com/airockchip/rknn_model_zoo.git
+cd rknn_model_zoo/datasets    # 准备数据集
+mkdir tennis
+cp /path/to/tennis/imgdir tennis/img
+cd tennis
+ls img/* | tee dataset.txt
+cd rknn_model_zoo/examples/yolov8/    
+cp /path/to/model model/
+python ./python/convert.py ./model/&lt;onnx_model> rk3576 int8 ./model/&lt;rknn_model>
+<p></code></pre><h2 id=4-npu-tui-li-bu-shu>4. NPU 推理部署</h2><pre><code data-lang=bash>python ./python/yolov8.py --model_path ./model/&lt;rknn_model> --target rk3576 --img_folder ./test_img/ --img_save
+</code></pre><h2 id=5-xing-neng-you-hua>5. 性能优化</h2><ol><li><strong>量化优化</strong>: 使用 INT8 量化，可获得 2-4 倍性能提升<li><strong>模型裁剪</strong>: 根据实际需求裁剪不必要的检测类别<li><strong>输入尺寸调整</strong>: 减小输入分辨率可显著提升速度</ol><h2 id=6-can-kao-zi-liao>6. 参考资料</h2><ul><li><a href=https://docs.radxa.com/rock4/rock4d rel=external>Rock4D 官方文档</a><li><a href=https://github.com/rockchip-linux/rknn-toolkit2 rel=external>RKNN Toolkit 文档</a></ul><hr><p><em>本文档由 ChenlongOS 社区维护，欢迎贡献和反馈。</em></div><footer class=article-footer><div class=end-mark>END</div></footer></article></main><footer class=footer><div class=container><div class=footer-content><div class=footer-section><div class=footer-logo><span class=logo-icon> <i class="fas fa-robot"></i> </span><span class=logo-text>ChenlongOS</span></div><p class=footer-desc>面向机器人的开源操作系统发行版</div><div class=footer-section><h4>快速链接</h4><ul><li><a href=https://github.com/chenlongos>GitHub</a><li><a href=https://github.com/chenlongos/chenlong>项目仓库</a><li><a href=https://chenlongos.com/docs/>技术文档</a><li><a href=https://qa.arceos.cn/>问答论坛</a></ul></div><div class=footer-section><h4>关注我们</h4><div class=social-links><a href=https://github.com/chenlongos/ target=_blank title=GitHub> <i class="fab fa-github"></i> </a><a href=https://mp.weixin.qq.com/s/chenlongos target=_blank title=微信> <i class="fab fa-weixin"></i> </a></div><p class=wechat-name>微信公众号: ChenLongOS</div></div><div class=footer-bottom><p>© 2024 ChenlongOS. All rights reserved.<p>基于 <a href=https://arceos.cn>ArceOS</a> 构建 | <a href=https://github.com/chenlongos/arceos/blob/main/LICENSE>MIT License</a></div></div></footer><script src=https://chenlongos.com/js/site.js></script>
