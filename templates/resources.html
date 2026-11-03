@@ -1,5 +1,3 @@
-{% import "macros.html" as macros %}
-
 {% extends "base.html" %}
 
 {% block title %}{{ section.title }}{% endblock title %}
@@ -26,7 +24,7 @@
 {% if category.resources %}
 <dl class="resources">
     {% for resource in category.resources %}
-    {{ macros::resource(resource=resource) }}
+    {{<resource resource={resource} />}}
     {% endfor %}
 </dl>
 {% endif %}
@@ -39,7 +37,7 @@
     {% if subcategory.resources %}
     <dl class="resources">
         {% for resource in subcategory.resources %}
-        {{ macros::resource(resource=resource) }}
+        {{<resource resource={resource} />}}
         {% endfor %}
     </dl>
     {% endif %}

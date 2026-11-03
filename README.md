@@ -37,10 +37,15 @@ chenlongos.github.io/
 ### 本地开发
 
 1. **安装 Zola**
+   - 需要 Zola **0.23.x 及以上**：模板使用了 Tera v2 的 component 语法（0.23 起不再支持 `{% macro %}`），版本低于 0.23 会构建失败
    - 访问 [Zola 官方网站](https://www.getzola.org/) 下载并安装适合您操作系统的版本
    - 或者使用包管理器安装，例如：
      - macOS: `brew install zola`
      - Linux: 参考官方文档的安装指南
+     - 不便升级本机 Zola 时，可用 Docker 验证构建：
+       ```bash
+       docker run --rm -v "$PWD":/srv -w /srv ghcr.io/getzola/zola:v0.23.6 build --drafts
+       ```
 
 2. **克隆项目**
    ```bash

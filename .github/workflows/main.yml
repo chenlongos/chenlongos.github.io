@@ -14,11 +14,11 @@ jobs:
     if: github.ref != 'refs/heads/main'
     steps:
       - name: Checkout main
-        uses: actions/checkout@v3.0.0
+        uses: actions/checkout@v4
         with:
           submodules: true
       - name: Build only
-        uses: shalzz/zola-deploy-action@master
+        uses: shalzz/zola-deploy-action@v0.23.6
         env:
           BUILD_ONLY: true
           BUILD_FLAGS: --drafts
@@ -31,11 +31,11 @@ jobs:
       contents: write
     steps:
       - name: Checkout main
-        uses: actions/checkout@v3.0.0
+        uses: actions/checkout@v4
         with:
           submodules: true
       - name: Build and deploy
-        uses: shalzz/zola-deploy-action@master
+        uses: shalzz/zola-deploy-action@v0.23.6
         env:
           PAGES_BRANCH: gh-pages
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

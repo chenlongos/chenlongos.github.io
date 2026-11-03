@@ -1,4 +1,4 @@
-{% macro resource(resource) %}
+{% component resource(resource: map) %}
 <dt>
     <a href="{{ resource.url }}" target="_blank">
         <span class="is-size-5 has-text-weight-semibold">{{ resource.title }}</span>
@@ -13,4 +13,4 @@
 {% if resource.description %}
 <dd class="mt-1">{{ resource.description }}</dd>
 {% endif %}
-{% endmacro resource %}
+{% endcomponent resource %}
